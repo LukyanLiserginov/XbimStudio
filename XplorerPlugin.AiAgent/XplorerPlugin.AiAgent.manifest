@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>XplorerPlugin.AiAgent</id>
+    <version>5.1.0</version>
+    <title>XplorerPlugin.AiAgent</title>
+    <authors>xBIM community</authors>
+    <owners>xBIM community</owners>
+    <projectUrl>https://github.com/xBimTeam/</projectUrl>
+    <description>AI agent chat plugin for XbimXplorer. Ask questions about the open IFC model, inspect entities and generate reports using an OpenAI-compatible LLM endpoint.</description>
+    <summary>AI agent for asking questions about IFC models and generating reports</summary>
+    <language>en-GB</language>
+    <tags>AI, LLM, IFC, BIM, XplorerPlugin</tags>
+    <dependencies>
+      <dependency id="Xbim.WindowsUI" version="[5.1,5.2)" />
+    </dependencies>
+  </metadata>
+</package>

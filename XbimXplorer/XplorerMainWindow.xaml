@@ -7,7 +7,7 @@
         xmlns:etb="clr-namespace:XbimXplorer.EditableTextBlock"
     xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
     xmlns:viewModels="clr-namespace:Xbim.Ifc.ViewModels;assembly=Xbim.Ifc"
-    Title="Xbim Xplorer" Height="600" Width="800" 
+    Title="Xbim Studio" Height="600" Width="800" 
     x:Name="MainWindow"
          ContentRendered="RenderedEvents" Icon="pack://siteoforigin:,,,/xBIM.ico" >
     <Window.Resources>

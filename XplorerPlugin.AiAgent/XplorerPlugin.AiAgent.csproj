@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>XplorerPlugin.AiAgent</AssemblyName>
+    <RootNamespace>XplorerPlugin.AiAgent</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xbim.Presentation\Xbim.Presentation.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xbim.Common" Version="6.1.605" />
+    <PackageReference Include="Xbim.Ifc" Version="6.1.605" />
+    <PackageReference Include="Xbim.Ifc2x3" Version="6.1.605" />
+    <PackageReference Include="Xbim.Ifc4" Version="6.1.605" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="PluginConfig.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="XplorerPlugin.AiAgent.manifest" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="DeployPlugin" AfterTargets="Build">
+    <PropertyGroup>
+      <PluginDeployDir>$(MSBuildThisFileDirectory)..\Output\$(Configuration)\net472\Plugins\XplorerPlugin.AiAgent\</PluginDeployDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <PluginFiles Include="$(TargetDir)**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(PluginFiles)" DestinationFiles="@(PluginFiles->'$(PluginDeployDir)%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+</Project>
